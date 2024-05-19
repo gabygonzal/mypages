@@ -149,6 +149,7 @@ body {
 }
 
 .hero-section .img img {
+    mix-blend-mode:lighten; /*edit how you want this is what i could figure out*/
     width: 100%;
     height: auto;
     max-height: 400px;
