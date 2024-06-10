@@ -40,14 +40,14 @@
 
 /* Body Styling */
 body {
-  padding-top: 118px;
     background-color: #222;
-    position: relative; 
+    position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     overflow: hidden;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -134,21 +134,54 @@ body {
     color: #fff;
 }
 
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding-top: 100px;
+    gap: 20px; /* Space between cards and description */
+    z-index: 100;
+}
+.abt {
+  margin-top: 95px; /* Adjust spacing as needed */
+  margin-bottom: 20px; /* Adjust spacing as needed */
+  color: #fff;
+  text-align:justify;
+  position: relative; /* Add position relative */
+  top: -70px; /* Adjust vertical position */
+  left:170px;
+}
+.description {
+margin-top: 100px;
+margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%; /* Adjust width as needed */
+    padding: 20px;
+    color: white;
+    z-index: 100;
+}
+
+
+
 .row {
     display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-    max-width: 1200px;
-    margin: 10px auto;
-    padding-top: 400px;
-    margin-left: -200px;
+    justify-content: center; /* Center the cards horizontally */
+    align-items: flex-start;
+    width: 70%; /* Adjust width as needed */
+    gap: 30px; /* Space between cards */
+    z-index: 100;
 }
 
 .column {
     flex: 1;
     padding: 16px;
-    margin: 5px;
-    max-width: calc(33.333% - 10px); /* Adjust to control number of columns */
+    max-width: 300px; /* Adjust the width of each card */
     box-sizing: border-box;
 }
 
@@ -156,8 +189,8 @@ body {
     padding: 16px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
-    width: 150%;
-    height: 500px; /* Adjust the height as needed */
+    width: 120%; /* Full width of the column */
+    height: 450px; /* Adjust the height as needed */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,37 +200,14 @@ body {
 
 .card img {
     width: 100%;
-    height: 230px; /* Adjust height as needed */
-    object-fit:cover;
+    height: 150px; /* Adjust height as needed */
+    object-fit: cover;
     border-radius: 10px;
 }
 
 .card .container {
     padding: 16px;
     text-align: center;
-}
-
-.description {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    height: 10%;
-    max-width: 100%;
-    margin-top: 350px;
-    color: white;
-    background-color: rgba(35, 42, 52, 0.1);
-    position: absolute;
-    left: 5px;
-    top: -200px;
-   padding-top: 230px;
-}
-
-.abt {
-    color: #fff;
-    margin-left: 10px;
-    position: relative;
-    margin-bottom: 300px;
 }
 
 .title {
@@ -222,8 +232,26 @@ body {
     background-color: #47b2e4;
 }
 
+.footer {
+    padding: 20px 0;
+    position: fixed;
+    left: 10%;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.footer .container {
+    width: 100%;
+}
+
+.footer_copyright {
+    color: #fff;
+}
+
 
   @media screen and (max-width: 960px) {
+    
     .navbar .links {
         position: fixed;
         right: -100%;
@@ -231,7 +259,7 @@ body {
         width: 100%;
         height: 100vh;
         padding-top: 50px;
-        background-color: rgba(35, 42, 52, 0.9);
+        background-color: #000;
         flex-direction: column;
         transition: right 0.3s ease; /* Changed from left to right */
     }
@@ -253,6 +281,7 @@ body {
         align-items: center;
         padding-top: 20px;
         margin: 0 auto;
+        margin-left: -900px;
     }
 
     .column {
@@ -263,7 +292,8 @@ body {
     .description {
         position: static;
         margin-top: 20px;
-        padding-top: 20px;
+        padding-top: 15px;
+        margin-left: 150px;
     }
 
     .abt {
